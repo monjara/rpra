@@ -1,17 +1,11 @@
-use proconio::input;
+use proconio::{fastout, input};
 
+#[fastout]
 fn main() {
     input! {
-        n: usize
+        n: usize,
+        a: [usize; n]
     }
-    let ans = func(n);
+    let ans: usize = a.iter().sum();
     println!("{}", ans)
-}
-
-fn func(k: usize) -> usize {
-    if k == 0 {
-        1
-    } else {
-        k * func(k - 1)
-    }
 }

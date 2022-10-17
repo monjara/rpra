@@ -1,3 +1,17 @@
+use proconio::input;
+
 fn main() {
-    println!("Hello, world!");
+    input! {
+        n: usize
+    }
+    let ans = func(n);
+    println!("{}", ans)
+}
+
+fn func(k: usize) -> usize {
+    if k == 0 {
+        1
+    } else {
+        k * func(k - 1)
+    }
 }

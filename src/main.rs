@@ -3,9 +3,14 @@ use proconio::{fastout, input};
 #[fastout]
 fn main() {
     input! {
-        s: String
+        a: usize,
+        b: usize,
+        c: usize,
     }
-    let len = s.chars().count();
-    let index = ((len + 1) / 2) - 1;
-    println!("{}", s.chars().nth(index).unwrap())
+    let ans = if (a <= b && b <= c) || (c <= b && b <= a) {
+        "Yes"
+    } else {
+        "No"
+    };
+    println!("{}", ans);
 }
